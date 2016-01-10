@@ -20,6 +20,7 @@ define(["config",
     groups: DS.hasMany('group'),
     postedTo: DS.hasMany('subscription'),
 
+    commentsDisabled: DS.attr('boolean'),
     isHidden: DS.attr('boolean'),
 
     timeline: DS.belongsTo('timeline'),

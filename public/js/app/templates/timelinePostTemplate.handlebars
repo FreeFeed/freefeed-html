@@ -72,7 +72,17 @@
       <span class="post-controls">
         {{#if controller.session.signedIn}}
           -
-          <a {{action 'toggleCommentForm'}} class="p-timeline-post-comment-action">Comment</a>
+          {{#if post.model.commentsDisabled}}
+            {{#if view.isOwner}}
+              <i>Comments disabled (not for you)</i>
+              -
+              <a {{action 'toggleCommentForm'}} class="p-timeline-post-comment-action">Comment</a>
+            {{else}}
+              <i>Comments disabled</i>
+            {{/if}}
+          {{else}}
+            <a {{action 'toggleCommentForm'}} class="p-timeline-post-comment-action">Comment</a>
+          {{/if}}
           -
           {{#if controller.isLiked}}
             <span><a {{action 'unlike'}} class="p-timeline-post-unlike-action">Un-like</a></span>
