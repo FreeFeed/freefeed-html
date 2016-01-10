@@ -92,7 +92,17 @@
       <span class="post-controls">
         {{#if controller.session.signedIn}}
           -
-          <a {{action 'focusCommentForm' target=view}} class="p-post-comment">Comment</a>
+          {{#if model.commentsDisabled}}
+            {{#if view.isOwner}}
+              <i>Comments disabled (not for you)</i>
+              -
+              <a {{action 'focusCommentForm' target=view}} class="p-post-comment">Comment</a>
+            {{else}}
+              <i>Comments disabled</i>
+            {{/if}}
+          {{else}}
+            <a {{action 'focusCommentForm' target=view}} class="p-post-comment">Comment</a>
+          {{/if}}
           -
           {{#if isLiked}}
             <span><a {{action 'unlike'}} class="p-post-unlike">Un-like</a></span>
