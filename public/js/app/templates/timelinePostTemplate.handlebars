@@ -159,19 +159,21 @@
           </div>
         </div>
       {{else}}
-        {{#if post.comments.length}}
-          {{#unless controller.hasOmittedComments}}
-            {{#if controller.session.signedIn}}
-              <div class="add-comment-block">
-                <a class="fa-stack fa-1x" {{action 'toggleCommentForm'}}>
-                  <i class="fa fa-comment-o fa-stack-1x"></i>
-                  <i class="fa fa-square fa-inverse fa-stack-1x"></i>
-                  <i class="fa fa-plus fa-stack-1x"></i>
-                </a>
-                <a class="add-comment-link" {{action 'toggleCommentForm'}}>Add comment</a>
-              </div>
-            {{/if}}
-          {{/unless}}
+        {{#if controller.canAddComment}}
+          {{#if post.comments.length}}
+            {{#unless controller.hasOmittedComments}}
+              {{#if controller.session.signedIn}}
+                <div class="add-comment-block">
+                  <a class="fa-stack fa-1x" {{action 'toggleCommentForm'}}>
+                    <i class="fa fa-comment-o fa-stack-1x"></i>
+                    <i class="fa fa-square fa-inverse fa-stack-1x"></i>
+                    <i class="fa fa-plus fa-stack-1x"></i>
+                  </a>
+                  <a class="add-comment-link" {{action 'toggleCommentForm'}}>Add comment</a>
+                </div>
+              {{/if}}
+            {{/unless}}
+          {{/if}}
         {{/if}}
       {{/if}}
     </div>

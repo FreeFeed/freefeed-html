@@ -58,6 +58,13 @@ define(["config",
       return likes.get('length') + this.get('model.omittedLikes') - 3
     }.property('model.omittedLikes', 'model.likes', 'model.likes.length'),
 
+    canAddComment: function() {
+      var commentsDisabled = this.get('model.commentsDisabled')
+      var postAuthor = this.get('model.createdBy.id')
+      var currentUser = this.get('session.currentUser.id')
+      return (!commentsDisabled || (postAuthor === currentUser))
+    }.property('model.commentsDisabled', 'model.createdBy.id', 'session.currentUser.id'),
+
     isEdit: false,
     isFormVisible: false,
     isSendingComment: false,
