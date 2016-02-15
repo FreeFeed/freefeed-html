@@ -83,12 +83,15 @@
           {{else}}
             <a {{action 'toggleCommentForm'}} class="p-timeline-post-comment-action">Comment</a>
           {{/if}}
-          -
-          {{#if controller.isLiked}}
-            <span><a {{action 'unlike'}} class="p-timeline-post-unlike-action">Un-like</a></span>
-          {{else}}
-            <span><a {{action 'like'}} class="p-timeline-post-like-action">Like</a></span>
-          {{/if}}
+
+          {{#unless view.isOwner}}
+            -
+            {{#if controller.isLiked}}
+              <span><a {{action 'unlike'}} class="p-timeline-post-unlike-action">Un-like</a></span>
+            {{else}}
+              <span><a {{action 'like'}} class="p-timeline-post-like-action">Like</a></span>
+            {{/if}}
+          {{/unless}}
 
           {{#if view.parentView.parentView.isRiverOfNews}}
             -

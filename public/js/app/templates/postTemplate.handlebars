@@ -103,12 +103,15 @@
           {{else}}
             <a {{action 'focusCommentForm' target=view}} class="p-post-comment">Comment</a>
           {{/if}}
-          -
-          {{#if isLiked}}
-            <span><a {{action 'unlike'}} class="p-post-unlike">Un-like</a></span>
-          {{else}}
-            <span><a {{action 'like'}} class="p-post-like">Like</a></span>
-          {{/if}}
+
+          {{#unless view.isOwner}}
+            -
+            {{#if isLiked}}
+              <span><a {{action 'unlike'}} class="p-post-unlike">Un-like</a></span>
+            {{else}}
+              <span><a {{action 'like'}} class="p-post-like">Like</a></span>
+            {{/if}}
+          {{/unless}}
 
           {{#if view.isOwner}}
             -
