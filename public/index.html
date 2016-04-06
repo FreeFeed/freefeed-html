@@ -39,7 +39,7 @@
 </head>
 <body class="transition-active transition-static">
   <div class="annotation-title">
-    You are now using the old version of FreeFeed website. It is still up, but updates and new features are rolled out to the new version only. <a href="https://beta.freefeed.net">Try the new version</a>
+    You are now using the old version of FreeFeed website. It is still up, but updates and new features are rolled out to the new version only. <a href="https://beta.freefeed.net">Try the new version</a> or <span class='annotation-dismiss'>dismiss</span>
   </div>
   <div id="ember-app">
     <div class="container">
@@ -91,6 +91,13 @@
     });
 
     require(['main']);
+  </script>
+  <script>
+    var alertButton = document.querySelector('.annotation-dismiss')
+    alertButton.addEventListener('click', function(){
+      var alert = document.querySelector('.annotation-title')
+      alert.style.display = 'none';
+    })
   </script>
 </body>
 </html>

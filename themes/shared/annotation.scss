@@ -1,9 +1,15 @@
 .annotation-title {
-  color: white;
-  background-color: #000088;
+  text-align: center;
+  color: #555;
+  background-color: #aecbf1;
   padding: 10px 20px;
   a {
-    color: white;
+    color: #555;
+    text-decoration: underline;
+  }
+  .annotation-dismiss{
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 600px) {
