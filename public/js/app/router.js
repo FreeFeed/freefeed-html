@@ -53,8 +53,10 @@ define(["app/app"], function(App) {
 
   App.Router.reopen({
     changeBanner: function() {
-      var bannerLink = document.querySelectorAll('.annotation-title a')[0]
-      bannerLink.href = 'https://beta.' + location.hostname + location.pathname + location.search
+      var bannerLink = document.querySelector('.annotation-title a')
+      if (bannerLink) {
+        bannerLink.href = 'https://beta.' + location.hostname + location.pathname + location.search
+      }
     }.on('didTransition')
   })
 })
