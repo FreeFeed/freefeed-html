@@ -50,4 +50,11 @@ define(["app/app"], function(App) {
         });
     }.on('didTransition')
   });
+
+  App.Router.reopen({
+    changeBanner: function() {
+      var bannerLink = document.querySelectorAll('.annotation-title a')[0]
+      bannerLink.href = 'https://beta.' + location.hostname + location.pathname + location.search
+    }.on('didTransition')
+  })
 })
