@@ -38,9 +38,6 @@
   <meta name="msapplication-config" content="/img/win81/browserconfig.xml" />
 </head>
 <body class="transition-active transition-static">
-  <div class="annotation-title">
-    You are now using the old version of FreeFeed website. It is still up, but updates and new features are rolled out to the new version only. <a href="https://freefeed.net">Try the new version</a> or <span class='annotation-dismiss'>dismiss</span>
-  </div>
   <div id="ember-app">
     <div class="container">
       <div class="row header-row">
@@ -79,23 +76,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    var removeAnnotation = function() {
-      var alert = document.querySelector('.annotation-title')
-      alert.remove();
-    }
-    var annotationCookie = document.cookie.match('annotation_dismiss')
-    if (annotationCookie) {
-      removeAnnotation();
-    } else {
-      var alertButton = document.querySelector('.annotation-dismiss')
-      alertButton.addEventListener('click', function() {
-        removeAnnotation();
-        document.cookie = 'annotation_dismiss=true'
-      })
-    }
-  </script>
 
   <script src="/js/libs/requirejs/2.1.15/require.min.js"></script>
 
