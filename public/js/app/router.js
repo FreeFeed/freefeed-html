@@ -51,10 +51,4 @@ define(["app/app"], function(App) {
     }.on('didTransition')
   });
 
-  App.Router.reopen({
-    changeBanner: function() {
-      var bannerLink = document.querySelectorAll('.annotation-title a')[0]
-      bannerLink.href = 'https://freefeed.net' + location.pathname + location.search
-    }.on('didTransition')
-  })
 })
