@@ -3,7 +3,7 @@
   "name": "freefeed-html",
   "description": "Pepyatka is an open source FriendFeed clone. Basically, this is a social real-time feed aggregator that allows you to share cute kittens, coordinate upcoming events, discuss any other cool stuff on the Internet or setup a private Pepyatka instance in your company.",
   "homepage": "https://freefeed.net",
-  "version": "0.8.3",
+  "version": "0.8.7",
   "private": true,
   "scripts": {
     "start": "node index",
